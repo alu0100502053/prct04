@@ -25,8 +25,10 @@ def mostrar_matriz(m3)
    m3.to_a.each {|r| puts r.inspect}
 end
 
+#En este punto se creo un conflicto al modificar los dos miembros del proyecto el mismo fichero. 
+#Como lo unico que aparecio en el conflicto fue una funcion mas, se solucionó facilmente simplemente eliminando las cabeceras comentadas a continuacion:
 #<<<<<<< HEAD
-=======
+
 def rellenar_matriz(j)
    puts "Rellenando MATRIZ #{j}: "
    print "Introduzca numero de filas: "
@@ -40,7 +42,8 @@ def rellenar_matriz(j)
    end
    a
 end
-#>>>>>>> 8ec3553874b360aff587dc268526d144df75106a
+#=======
+#>>>>>>> 1d2078809bcb2013e32eb2185195a96eac00a1ca
 
 def menu
    m1 = Matrix.rows(rellenar_matriz(j=1))
