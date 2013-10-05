@@ -8,7 +8,24 @@ def multiplicacion
    puts "Multiplicacion"
 end
 
+def rellenar_matriz(j)
+   puts "Rellenando MATRIZ #{j}: "
+   print "Introduzca numero de filas: "
+   fil = gets.to_i
+   puts "Rellene la matriz por filas y separando los elementos con espacios. Por ejemplo: 1 2 3: " 
+   a = Array.new
+   fil.times do |i|
+      print "fila [#{i}]:"
+      tmp = gets.chomp.split(/ /).map(&:to_i)
+      a.push(tmp)
+   end
+   a
+end
+
 def menu
+   m1 = Matrix.rows(rellenar_matriz(j=1))
+   puts
+   m2 = Matrix.rows(rellenar_matriz(j=2))
    opc = ''
    while opc != 0 do
       puts "            Menu"
