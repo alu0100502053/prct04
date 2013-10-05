@@ -1,12 +1,30 @@
-require 'matrix'
-
-def suma
-   puts "Suma"
+def suma(m1,m2)
+   m3= m1 + m2
+   puts "La suma de : "
+   puts 
+   mostrar_matriz(m1)
+   puts "   + "
+   mostrar_matriz(m2)
+   puts "   = "
+   mostrar_matriz(m3)
 end
 
-def multiplicacion
-   puts "Multiplicacion"
+def multiplicacion(m1,m2)
+   m3 = m1 * m2
+   puts "La multiplicacion de : "
+   puts
+   mostrar_matriz(m1)
+   puts "   * "
+   motrar_matriz(m2)
+   puts "   = "
+   motrar_matriz(m3)
+
 end
+
+def mostrar_matriz(m3)
+   m3.to_a.each {|r| puts r.inspect}
+end
+
 
 def menu
    opc = ''
