@@ -46,9 +46,11 @@ end
 #>>>>>>> 1d2078809bcb2013e32eb2185195a96eac00a1ca
 
 def menu
+   system("clear")
    m1 = Matrix.rows(rellenar_matriz(j=1))
    puts
    m2 = Matrix.rows(rellenar_matriz(j=2))
+   system("clear")
    opc = ''
    while opc != 0 do
       puts "            Menu"
