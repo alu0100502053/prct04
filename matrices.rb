@@ -63,8 +63,8 @@ def menu
       puts 
       print "Opcion: "
       opc = gets.to_i
-      suma if opc == 1
-      multiplicacion if opc == 2
+      suma(m1,m2) if opc == 1
+      multiplicacion(m1,m2) if opc == 2
    end
 end
 
