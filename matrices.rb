@@ -1,3 +1,4 @@
+require 'matrix'
 def suma(m1,m2)
    m3= m1 + m2
    puts "La suma de : "
