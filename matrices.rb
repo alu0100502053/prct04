@@ -23,8 +23,10 @@ def rellenar_matriz(j)
 end
 
 def menu
+   system("clear")
    m1 = Matrix.rows(rellenar_matriz(j=1))
    puts
+   system("clear")
    m2 = Matrix.rows(rellenar_matriz(j=2))
    opc = ''
    while opc != 0 do
