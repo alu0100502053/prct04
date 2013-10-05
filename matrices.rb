@@ -1,5 +1,4 @@
 require 'matrix'
-
 def suma(m1,m2)
    m3= m1 + m2
    puts "La suma de : "
@@ -30,6 +29,7 @@ end
 #En este punto se creo un conflicto al modificar los dos miembros del proyecto el mismo fichero. 
 #Como lo unico que aparecio en el conflicto fue una funcion mas, se solucionó facilmente simplemente eliminando las cabeceras comentadas a continuacion:
 #<<<<<<< HEAD
+
 def rellenar_matriz(j)
    puts "Rellenando MATRIZ #{j}: "
    print "Introduzca numero de filas: "
