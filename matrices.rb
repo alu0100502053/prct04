@@ -51,9 +51,9 @@ def menu
    m1 = Matrix.rows(rellenar_matriz(j=1))
    puts
    m2 = Matrix.rows(rellenar_matriz(j=2))
-   system("clear")
    opc = ''
    while opc != 0 do
+      system("clear")
       puts "            Menu"
       puts "-----------------------------"
       puts "-- 1) Sumar Matrices       --"
