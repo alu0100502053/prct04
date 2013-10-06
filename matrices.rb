@@ -1,4 +1,5 @@
 require 'matrix'
+
 def suma(m1,m2)
    m3= m1 + m2
    puts "La suma de : "
@@ -8,6 +9,7 @@ def suma(m1,m2)
    mostrar_matriz(m2)
    puts "   = "
    mostrar_matriz(m3)
+   gets
 end
 
 def multiplicacion(m1,m2)
@@ -19,7 +21,7 @@ def multiplicacion(m1,m2)
    mostrar_matriz(m2)
    puts "   = "
    mostrar_matriz(m3)
-
+   gets
 end
 
 def mostrar_matriz(m3)
@@ -30,16 +32,20 @@ end
 #Como lo unico que aparecio en el conflicto fue una funcion mas, se solucionó facilmente simplemente eliminando las cabeceras comentadas a continuacion:
 #<<<<<<< HEAD
 
-def rellenar_matriz(j)
+def rellenar_matriz(j,dim)
    puts "Rellenando MATRIZ #{j}: "
-   print "Introduzca numero de filas: "
-   fil = gets.to_i
    puts "Rellene la matriz por filas y separando los elementos con espacios. Por ejemplo: 1 2 3: " 
    a = Array.new
-   fil.times do |i|
-      print "fila [#{i}]:"
+   contador = 0
+   while contador != dim do
+      print "fila [#{contador}]:"
       tmp = gets.chomp.split(/ /).map(&:to_i)
-      a.push(tmp)
+      if tmp.count == dim then
+         a.push(tmp)
+         contador += 1
+      else
+         puts "La matriz debe ser #{dim} x #{dim}"
+      end
    end
    a
 end
@@ -48,9 +54,16 @@ end
 
 def menu
    system("clear")
-   m1 = Matrix.rows(rellenar_matriz(j=1))
+   print "Introduzca la dimension de las matrices cuadradas: "
+   dim = gets.to_i
+   m1 = Matrix.rows(rellenar_matriz(j=1,dim))
    puts
-   m2 = Matrix.rows(rellenar_matriz(j=2))
+   mostrar_matriz(m1)
+   gets
+   m2 = Matrix.rows(rellenar_matriz(j=2,dim))
+   puts
+   mostrar_matriz(m2)
+   gets
    opc = ''
    while opc != 0 do
       system("clear")
