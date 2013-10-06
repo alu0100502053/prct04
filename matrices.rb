@@ -16,9 +16,9 @@ def multiplicacion(m1,m2)
    puts
    mostrar_matriz(m1)
    puts "   * "
-   motrar_matriz(m2)
+   mostrar_matriz(m2)
    puts "   = "
-   motrar_matriz(m3)
+   mostrar_matriz(m3)
 
 end
 
