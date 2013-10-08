@@ -12,8 +12,16 @@ def suma(m1,m2)
    gets
 end
 
-def multiplicacion(m1,m2)
-   m3 = m1 * m2
+def multiplicacion(m1,m2,dim) // objeto multiplicacion 
+   m3 = Array.new(dim) {Array.new(dim)} // declaracion de matriz bidimensional
+   dim.times do |i| // bucle para recorrer primera dimension  
+      dim.times do |j| // bucle para recorrer segunda dimension
+         m3[i][j]=0
+         dim.times do |k| //bucle para rellener la matriz resultado
+            m3[i][j] += m1[i][k] * m2[k][j]
+         end
+      end
+   end
    puts "La multiplicacion de : "
    puts
    mostrar_matriz(m1)
@@ -77,7 +85,7 @@ def menu
       print "Opcion: "
       opc = gets.to_i
       suma(m1,m2) if opc == 1
-      multiplicacion(m1,m2) if opc == 2
+      multiplicacion(m1,m2,di,dim) if opc == 2
    end
 end
 
