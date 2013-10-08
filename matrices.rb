@@ -67,11 +67,11 @@ def menu
    system("clear")
    print "Introduzca la dimension de las matrices cuadradas: "
    dim = gets.to_i
-   m1 = Matrix.rows(rellenar_matriz(j=1,dim))
+   m1 = rellenar_matriz(j=1,dim)
    puts
    mostrar_matriz(m1)
    gets
-   m2 = Matrix.rows(rellenar_matriz(j=2,dim))
+   m2 = rellenar_matriz(j=2,dim)
    puts
    mostrar_matriz(m2)
    gets
