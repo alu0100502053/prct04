@@ -1,7 +1,10 @@
-require 'matrix'
-
-def suma(m1,m2)
-   m3= m1 + m2
+def suma(m1,m2,dim)
+   m3 = Array.new(dim) {Array.new(dim)} #Creo una matriz de dimension "dim"
+   dim.times do |i| #Bucles necesarios para recorrer la matriz
+      dim.times do |j|
+         m3[i][j] = m1[i][j] + m2[i][j] #Para calcular el elemento nuevo y guardarlo en la matriz m3
+      end
+   end
    puts "La suma de : "
    puts 
    mostrar_matriz(m1)
@@ -12,12 +15,12 @@ def suma(m1,m2)
    gets
 end
 
-def multiplicacion(m1,m2,dim) // objeto multiplicacion 
-   m3 = Array.new(dim) {Array.new(dim)} // declaracion de matriz bidimensional
-   dim.times do |i| // bucle para recorrer primera dimension  
-      dim.times do |j| // bucle para recorrer segunda dimension
+def multiplicacion(m1,m2,dim) # objeto multiplicacion 
+   m3 = Array.new(dim) {Array.new(dim)} # declaracion de matriz bidimensional
+   dim.times do |i| #bucle para recorrer primera dimension  
+      dim.times do |j| # bucle para recorrer segunda dimension
          m3[i][j]=0
-         dim.times do |k| //bucle para rellener la matriz resultado
+         dim.times do |k|#bucle para rellener la matriz resultado
             m3[i][j] += m1[i][k] * m2[k][j]
          end
       end
@@ -33,7 +36,7 @@ def multiplicacion(m1,m2,dim) // objeto multiplicacion
 end
 
 def mostrar_matriz(m3)
-   m3.to_a.each {|r| puts r.inspect}
+   m3.each {|r| puts r.inspect}
 end
 
 #En este punto se creo un conflicto al modificar los dos miembros del proyecto el mismo fichero. 
@@ -84,8 +87,15 @@ def menu
       puts 
       print "Opcion: "
       opc = gets.to_i
-      suma(m1,m2) if opc == 1
-      multiplicacion(m1,m2,di,dim) if opc == 2
+#<<<<<<< HEAD
+#conflicto generador al modificar los argumentos de las llamadas
+#al metodo multiplicacion y suma
+      #suma(m1,m2) if opc == 1
+      #multiplicacion(m1,m2,dim) if opc == 2
+#=======
+      suma(m1,m2,dim) if opc == 1
+      multiplicacion(m1,m2,dim) if opc == 2
+#>>>>>>> eb34c9b6a8f3784361c85fbef7d65e2658fd7dfc
    end
 end
 
